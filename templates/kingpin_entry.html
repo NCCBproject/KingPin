@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="kingpin_entry.css"  type="text/css" rel="stylesheet"/>
-		<script src="kingpin_entry.js" type="text/javascript"></script>
-		<link rel = "icon" href = "crown.jpg" type = "image/png" sizes = "32x32">
+		<link href="{{url_for('static', filename='kingpin_entry.css')}}"  type="text/css" rel="stylesheet"/>
+		<script src="{{url_for('static', filename='kingpin_entry.js')}}" type="text/javascript"></script>
+		<link rel = "icon" href = "{{url_for('static', filename='crown.jpg')}}" type = "image/png" sizes = "32x32">
 		<title>King Pin Entry</title>
 		<meta charset = "utf-8"/>
 		
@@ -24,7 +24,7 @@
 			<p>Here is where the user will enter their data to place in database as a new entry</p>
 			<!-- Not sure if this is correct but here is what i have been working on -CD
 Also each inout type is named weirdly bc first number represents the frame and second represents throw number-->
-			<form action="kingping_entry.php" method="post">
+			<form action="{{url_for('static', filename='kingping_entry.php')}}" method="post">
 			Frame 1: <input type="text11" name="frame11"> 
 			<input type="text12" name="frame12"><br>
 

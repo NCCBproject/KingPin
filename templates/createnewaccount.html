@@ -1,10 +1,10 @@
 <html>
 
 <body>
-<img src = "kingpinCreateNewAccountImage.bmp"/>
+<img src = "{{url_for('static', filename='kingpinCreateNewAccountImage.bmp')}}"/>
 </body>
 
-<form action="insertNewAccount.php" method="post">
+<form action="{{url_for('static', filename='insertNewAccount.php" method="post')}}">
 
    <div class="container">
     <label for="uname"><b>Username</b></label>
