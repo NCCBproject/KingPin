@@ -11,7 +11,5 @@ Frame 7: <?php echo $_POST["frame71"]; ?><?php echo $_POST["frame72"]; ?><br>
 Frame 8: <?php echo $_POST["frame81"]; ?><?php echo $_POST["frame82"]; ?><br>
 Frame 9: <?php echo $_POST["frame91"]; ?><?php echo $_POST["frame92"]; ?><br>
 Frame 10: <?php echo $_POST["frame101"]; ?><?php echo $_POST["frame102"]; ?><br>
-Frame 11: <?php echo $_POST["frame111"]; ?><?php echo $_POST["frame112"]; ?><br>
-Frame 12: <?php echo $_POST["frame121"]; ?><?php echo $_POST["frame122"]; ?><br>
 </body>
 </html> 
