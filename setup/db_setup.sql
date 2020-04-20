@@ -24,9 +24,9 @@ create table if not exists game(
 create table if not exists frame(
 	g_id int,
     f_num tinyint,
-    f_throw1 tinyint,
-    f_throw2 tinyint,
-    f_throw3 tinyint,
+    f_throw1 char(1),
+    f_throw2 char(1),
+    f_throw3 char(1),
     f_split boolean,
     primary key(g_id, f_num),
     constraint frame_g_id_fk foreign key (g_id) references game(g_id)
