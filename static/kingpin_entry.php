@@ -10,6 +10,6 @@ Frame 6: <?php echo $_POST["frame61"]; ?><?php echo $_POST["frame62"]; ?><br>
 Frame 7: <?php echo $_POST["frame71"]; ?><?php echo $_POST["frame72"]; ?><br>
 Frame 8: <?php echo $_POST["frame81"]; ?><?php echo $_POST["frame82"]; ?><br>
 Frame 9: <?php echo $_POST["frame91"]; ?><?php echo $_POST["frame92"]; ?><br>
-Frame 10: <?php echo $_POST["frame101"]; ?><?php echo $_POST["frame102"]; ?><br>
+Frame 10: <?php echo $_POST["frame01"]; ?><?php echo $_POST["frame02"]; ?><?php echo $_POST["frame03"]; ?><br>
 </body>
 </html> 
