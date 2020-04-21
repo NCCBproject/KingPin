@@ -78,7 +78,7 @@ def entryPhp():
 
     #gets username from cookies and enters data into database
     uname = request.cookies.get('username')
-    cursor.execute('select count(*) from game where u_username = "{}";'.format(uname))
+    cursor.execute('select count(*) from game;')
     g_id = int(cursor.fetchall()[0][0]) + 1
     cursor.execute('insert into game values("{}", {}, now(), NULL);'.format(uname, g_id))
     for i in frames:
