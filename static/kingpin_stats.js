@@ -2,24 +2,38 @@
 	"use strict";
 	window.addEventListener("load", init);
 	let btn;
+	var content = {username:''};
 	function init(){
 		btn = document.getElementById("search_btn").addEventListener("click", function(){//when the button is clicked this stuff will happen
 			
 			let search_tag = document.getElementById("search_box").value;//gets value that is in the search bar
-			get_table_data(search_tag);//will search database for this tag
+			content.username = search_tag;
+			get_table_data();
 		});
 		//get_table_data(); // uncomment when there is a database to use
 		initialize_table();
 	}
+
+	
 	function get_table_data(){//function to get data from php file
 		let URL = "kingpin_stats.php";
-		fetch(URL)
+		//{method:'post', 'Content-Type':'application/json', body:JSON.stringify(content)}
+		fetch(URL, {method:'post', 'Content-Type':'application/json', body:JSON.stringify(content)})
 			.then(checkStatus)
 			.then(JSON.parse)
 			.then(initialize_table)//this will send the data to "initialize_table" function if there are no errors 
 			.catch(console.log);
 		
 	}
+	
+		
+	function initialize_stats(stats){
+		
+		let data = document.getElementById("player_data");
+		console.log(stats);
+		
+	}
+	
 	function initialize_table(){//function to create and fill table with data	(remember to put have parameter variable)
 		
 		let table = document.createElement("table");//creates table and adds it to html body
