@@ -13,17 +13,16 @@
 			<h1 id="homepage_title"> King Pin </h1>
 		</header>
 		<nav id="nav_container">
-			<a class="nav_buttons" href="KingPin.html">Home</a>
-			<a class="nav_buttons" href="KingPin_learn.html">How To</a>
-			<a class="nav_buttons" href="kingpin_stats.html"> <strong>Statistics</strong></a>
-			<a class="nav_buttons" href="kingpin_entry.html"> <strong>Entries</strong></a>
-			<a class="nav_buttons" href="kingpin_login.html"> <strong>Login</strong></a>
-			<a class="nav_buttons" href="kingpin_newAcct.html"> <strong>Create Account</strong></a>
+			<a class="nav_buttons" href="KingPin.html">Home</a> <!--buttons that goes to the homepage-->
+			<a class="nav_buttons" href="kingpin_stats.html"> <strong>Statistics</strong></a><!--button that goes to the stats page-->
+			<a class="nav_buttons" href="kingpin_entry.html"> <strong>Entries</strong></a><!--button that goes to the entries page-->
+			<a class="nav_buttons" href="kingpin_login.html"> <strong>Login</strong></a><!--button that goes into the login page-->
+			<a class="nav_buttons" href="kingpin_newAcct.html"> <strong>Create Account</strong></a><!--button that goes into the create new account page-->
 		</nav>
 		<main>
 			<p>Here is where the user will enter their data to place in database as a new entry</p>
-			<!-- Not sure if this is correct but here is what i have been working on -CD
-Also each inout type is named weirdly bc first number represents the frame and second represents throw number-->
+			<!-- The code below creates a place to input each score for each frame.
+ Each input type is named weirdly bc the first number represents the frame and second represents throw number-->
 			<form action="kingping_entry.php" method="post">
 			Frame 1: <input type="text11" name="frame11"> 
 			<input type="text12" name="frame12"><br>
@@ -54,20 +53,20 @@ Also each inout type is named weirdly bc first number represents the frame and s
 
 			Frame 10: <input type="text101" name="frame101">
 			<input type="text102" name="frame102">
-				<input type="text103" name="frame103"><br>
+			<input type="text103" name="frame103"><br><!-- this frame has an extra input incase the user gets two strikes-->
 
 			
 				
 			</div>
     				<button type="submit">Enter</button>
-   				</div>
+   				</div> <!--A button thatsubmits our data-->
 
 				
 
 			<div id = "entry_background">
 				<table>
-					<td><input type = "search" id = "search_box" placeholder="Search for a name"></td>
-					<td><button type = "button" id = "search_btn">Search</button></td>
+					<td><input type = "search" id = "search_box" placeholder="Search for a name"></td><!--a place to search for a name-->
+					<td><button type = "button" id = "search_btn">Search</button></td><!--a button that searches the user-->
 				</table>
 				
 			</div>
