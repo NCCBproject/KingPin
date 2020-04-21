@@ -8,8 +8,8 @@
 			let search_tag = document.getElementById("search_box").value;//gets value that is in the search bar
 			get_table_data(search_tag);//will search database for this tag
 		});
-		//get_table_data(); // uncomment when there is a database to use
-		initialize_table();
+		
+		initialize_table(); // calls initialize table function
 	}
 	function get_table_data(){//function to get data from php file
 		let URL = "kingpin_stats.php";
