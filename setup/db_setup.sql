@@ -17,6 +17,7 @@ create table if not exists game(
 	u_username varchar(64),
     g_id int,
     g_date date,
+	score int,
     primary key (g_id),
     constraint game_u_username_fk foreign key (u_username) references users(u_username)
 );
