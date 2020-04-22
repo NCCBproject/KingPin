@@ -7,11 +7,11 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['game1','game2','game3','game4','game5']
+        labels: ['game1','game2','game3','game4','game5']// lables for the x axis
         datasets: [{
             label: '# of Pins',
-            data: [game1,game2,game3,game4,game5
-			],
+            data: [game1,game2,game3,game4,game5 
+			],// data for each of the totals for the last 5 games. Names are currently placeholders.
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
