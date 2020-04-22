@@ -8,10 +8,10 @@ var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['1st Frame', '2nd Frame', '3rd Frame', '4th Frame',
-		'5th Frame', '6th Frame', '7th Frame', '8th Frame', '9th Frame', '10th Frame'],
+		'5th Frame', '6th Frame', '7th Frame', '8th Frame', '9th Frame', '10th Frame'], // lables for all of the x asix 
         datasets: [{
             label: '# of Pins',
-            data: [(Frame11-game1+Frame12-game1+Frame11-game2
+            data: [(Frame11-game1+Frame12-game1+Frame11-game2 
 			+Frame12-game2+Frame11-game3+Frame12-game3+Frame11-game4+
 			Frame12-game4+Frame11-game5+Frame12-game5)/5,//frame1 average
 			
