@@ -1,3 +1,7 @@
+// somewhere we have to put npm install chart.js --save
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
 var gamesUnder100
 var gamesUnder200
 var gamesUnder300
@@ -17,3 +21,4 @@ var myDoughnutChart = new Chart(ctx, {
 };
     options: options
 });
+<\script>
