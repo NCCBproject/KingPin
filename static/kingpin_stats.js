@@ -3,34 +3,40 @@
 	window.addEventListener("load", init);
 	let btn;
 	var content = {username:''};
+	
+	
 	function init(){
-		btn = document.getElementById("search_btn").addEventListener("click", function(){//when the button is clicked this stuff will happen
+		
+		if(document.cookie.indexOf("username=") == -1){
+		
+			btn = document.getElementById("search_btn").addEventListener("click", function(){//when the button is clicked this stuff will happen
 			
-			let search_tag = document.getElementById("search_box").value;//gets value that is in the search bar
-			content.username = search_tag;
-			get_table_data();
-		});
-		//get_table_data(); // uncomment when there is a database to use
+				let search_tag = document.getElementById("search_box").value;//gets value that is in the search bar
+				content.username = search_tag;
+			
+				get_table_data(content);//will search database for this tag
+			
+			});
+		}
+		else{
+			content.username = document.cookie;//gets cookie that has already been set by the python file.
+			get_table_data(content);
+		}
+			
 		initialize_table();
 	}
-
-	
-	function get_table_data(){//function to get data from php file
+	function get_table_data(username){//function to get data from php file
 		let URL = "kingpin_stats.php";
 		//{method:'post', 'Content-Type':'application/json', body:JSON.stringify(content)}
-		fetch(URL, {method:'post', 'Content-Type':'application/json', body:JSON.stringify(content)})
+		fetch(URL, {method:'post', 'Content-Type':'application/json', body:JSON.stringify(username)})
 			.then(checkStatus)
 			.then(JSON.parse)
-			.then(initialize_table)//this will send the data to "initialize_table" function if there are no errors 
+			.then(initialize_stats)//this will send the data to "initialize_table" function if there are no errors 
 			.catch(console.log);
 		
 	}
-	
-		
 	function initialize_stats(stats){
-		
-		let data = document.getElementById("player_data");
-		console.log(stats);
+			console.log(stats);
 		
 	}
 	
