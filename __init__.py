@@ -6,7 +6,7 @@ from flask import redirect
 from flask import url_for
 from flask import make_response
 from flask import abort
-
+from json import dumps
 from signal import signal
 
 app = Flask(__name__)
@@ -100,6 +100,10 @@ def checkLogin():
         ins = str(request.get_data()).split('=')
         ins = [ins[1][:-4], ins[2][:-1]]
 
+        #basic attempt to avoid some sql injection
+        if ';' in ins[0] or ';' in ins[1]:
+            abort(403)
+
         #checks if the user is already in the database
         cursor.execute('SELECT u_username from shadow where u_username = "{}" and hash = SHA2("{}", 512);'.format(ins[0], ins[1]))
         result = cursor.fetchall()
@@ -131,6 +135,10 @@ def insertAccount():
     ins = str(request.get_data()).split('=')
     ins = [ins[1][:-4], ins[2][:-4], ins[3][:-1]]
 
+    #basic attempt to avoid some sql injection
+    if ';' in ins[0] or ';' in ins[1] or ';' in ins[2]:
+        abort(403)
+    
     #validates that both passwords are the same, redirects user back to new account if failed
     if(ins[1] != ins[2]):
         return redirect(url_for('kingpin_newAcct.html'))
@@ -152,10 +160,27 @@ def stats():
     """Returns the html of the stats page"""
     return render_template('kingpin_stats.html')
 
-@app.route('/kingpin_stats.php', methods=['POST'])
+@app.route('/static/kingpin_stats.php', methods=['POST', 'GET'])
 def getStats():
     """Currently in for testing, will have function soon"""
-    print(request.get_data())
+    n = 20
+    uname = request.cookies.get('username')
+    print(uname)
+    cursor.execute('SELECT g_id, f_num, f_throw1, f_throw2, f_throw3, g_date from frame natural join game where g_id in (SELECT g_id FROM users NATURAL JOIN game where u_username = "{}");'.format(uname))
+    ins = cursor.fetchall()
+
+    games = {}
+    
+    for i in ins:
+        if str(i[0]) not in games:
+            games[str(i[0])] = {}
+            games[str(i[0])]["date"] = str(i[5])
+        if str(i[1]) == '10':
+            games[str(i[0])][str(i[1])] = [i[2], i[3], i[4]]
+        else:
+            games[str(i[0])][str(i[1])] = [i[2], i[3]]
+
+    return dumps(games)
 
 
 """Main execution of the python file"""
