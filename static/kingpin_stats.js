@@ -30,7 +30,8 @@
 		
 	}
 	function initialize_stats(stats){
-			console.log(stats.4);
+			//console.log(stats.4);
+			console.log(stats[4]);
 		
 	}
 	
