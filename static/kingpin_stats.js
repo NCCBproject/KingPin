@@ -25,35 +25,37 @@
 		fetch(URL)
 			.then(checkStatus)
 			.then(JSON.parse)
-			.then(initialize_stats)//this will send the data to "initialize_table" function if there are no errors 
+			.then(initialize_table)//this will send the data to "initialize_table" function if there are no errors 
 			.catch(console.log);
 		
 	}
-	function initialize_stats(stats){
-			//console.log(stats.4);
-			console.log(stats[4]);
-		
-	}
 	
-	function initialize_table(){//function to create and fill table with data	(remember to put have parameter variable)
-		
+	function initialize_table(stats){//function to create and fill table with data	(remember to put have parameter variable)
+		let gameNum = Object.keys(stats).length; //number of games 
 		let table = document.createElement("table");//creates table and adds it to html body
 		table.setAttribute("id", "data_table");
 		document.body.appendChild(table);
 		
-		for(let i = 0; i < 10; i++){//this will change. First row in table will need to get title of each column from php data. 
+		for(let i = 0; i < gameNum; i++){//this will change. First row in table will need to get title of each column from php data. 
 			let row = document.createElement("tr");// creates the rows of the table
 			for(let j = 0; j < 10; j++){// will put data onto table cells 
 				let table_part;//I'm pretty sure there is a better way to do this but idc right now since its midnight
-				if(i === 0)//first row will be bold
-					table_part = "th";
-				else 
+				if(i === 0){//first row will be bold
+					let col = document.createElement("th");//the first row will show the frame
+					let txt = document.createTextNode(j+1);
+					
+					col.appendChild(txt);//appends both col and row to the table
+					row.appendChild(col);
+				}
+				else{ 				// stats.gameID.FrameNumber.throw
 					table_part = "td";
-				let col = document.createElement(table_part);
-				let txt = document.createTextNode(j+1);//this is where the text will be set for the cell
+				
+					let col = document.createElement("td");
+					let txt = document.createTextNode(stats.i.j.0 + stats.i.j.1);//this is the score for the frame
 			
-				col.appendChild(txt);//appends both col and row to the table
-				row.appendChild(col);
+					col.appendChild(txt);//appends both col and row to the table
+					row.appendChild(col);
+				}
 			}
 			document.getElementById("data_table").appendChild(row);
 		}		
