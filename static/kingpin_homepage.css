@@ -40,7 +40,18 @@ nav{
 	background-color:black;
 	color:white;
 }
+#maintext{  /* this */
+	height:50px;
+	display:flex;
+	width:100%;
+	
+}
+#maintext a:hover{/* this */
+	text-shadow: 2px -1px red;
+	background-color:black;
+	color:white;
 dl{
 	background-color:white;
 	border: 5px solid black;
 }
+
