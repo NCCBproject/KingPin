@@ -35,6 +35,13 @@
 		let table = document.createElement("table");//creates table and adds it to html body
 		table.setAttribute("id", "data_table");
 		document.body.appendChild(table);
+		 if (stats[5]!=null){
+ 			 sessionStorage.setItem("firstGame", stats[1]);
+ 			 sessionStorage.setItem("secondGame", stats[2]);
+  			 sessionStorage.setItem("thirdGame", stats[3]);
+  			 sessionStorage.setItem("fourthGame", stats[4]);
+			 sessionStorage.setItem("fifthGame", stats[5]);
+ 			 }
 		
 		for(let i = 0; i < gameNum; i++){//this will change. First row in table will need to get title of each column from php data. 
 			let row = document.createElement("tr");// creates the rows of the table
