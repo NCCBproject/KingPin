@@ -12,3 +12,5 @@ An SSL certificate and private key must be placed into an 'ssl' directory. The c
 
 To run the webserver, run __init__.py with Python3. Since it listens on port 443 (HTTPS), this may require superuser priveleges. 
 Built on Flask 1.0.2 in Python 3.7.5. The Flask package must be installed for Python 3, as does the mysql connector.
+
+To connect to the website, make sure you are connecting to HTTPS! Most browsers default to HTTP connections, so you might need to manually enter HTTPS:// before the address.
