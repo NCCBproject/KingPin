@@ -64,7 +64,7 @@ def entryPhp():
         for j in frames[i]:
             try:
                 int(j)
-                if j < 0 or j > 9:
+                if int(j) < 0 or int(j) > 9:
                     abort(409)
             except ValueError:
                 if j.upper() == 'F' or j.upper() == 'X':
@@ -160,9 +160,10 @@ def stats():
     """Returns the html of the stats page"""
     return render_template('kingpin_stats.html')
 
-@app.route('/static/kingpin_stats.php', methods=['POST', 'GET'])
+@app.route('/kingpin_stats.php', methods=['POST', 'GET'])
 def getStats():
     """Currently in for testing, will have function soon"""
+    print("kingpin stats post:".format(request.get_data()))
     n = 20
     uname = request.cookies.get('username')
     print(uname)
