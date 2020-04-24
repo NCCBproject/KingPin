@@ -6,9 +6,7 @@
 	
 	
 	function init(){
-		
-		if(document.cookie.indexOf("username=") == -1){
-		
+
 			btn = document.getElementById("search_btn").addEventListener("click", function(){//when the button is clicked this stuff will happen
 			
 				let search_tag = document.getElementById("search_box").value;//gets value that is in the search bar
@@ -17,18 +15,14 @@
 				get_table_data(content);//will search database for this tag
 			
 			});
-		}
-		else{
-			content.username = document.cookie;//gets cookie that has already been set by the python file.
-			get_table_data(content);
-		}
+
 			
 		initialize_table();
 	}
 	function get_table_data(username){//function to get data from php file
 		let URL = "kingpin_stats.php";
 		//{method:'post', 'Content-Type':'application/json', body:JSON.stringify(content)}
-		fetch(URL, {method:'post', 'Content-Type':'application/json', body:JSON.stringify(username)})
+		fetch(URL)
 			.then(checkStatus)
 			.then(JSON.parse)
 			.then(initialize_stats)//this will send the data to "initialize_table" function if there are no errors 
