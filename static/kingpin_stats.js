@@ -24,14 +24,14 @@
 		//{method:'post', 'Content-Type':'application/json', body:JSON.stringify(content)}
 		fetch(URL)
 			.then(checkStatus)
-			.then(JSON.stringify)
+			.then(JSON.parse)
 			.then(initialize_stats)//this will send the data to "initialize_table" function if there are no errors 
 			.catch(console.log);
 		
 	}
 	function initialize_stats(stats){
 			//console.log(stats.4);
-			console.log(stats);
+			console.log(stats[4]);
 		
 	}
 	
