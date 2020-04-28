@@ -171,16 +171,19 @@ def getStats():
     ins = cursor.fetchall()
 
     games = {}
-    
-    for i in ins:
-        if str(i[0]) not in games:
-            games[str(i[0])] = {}
-            games[str(i[0])]["date"] = str(i[5])
-        if str(i[1]) == '10':
-            games[str(i[0])][str(i[1])] = [i[2], i[3], i[4]]
-        else:
-            games[str(i[0])][str(i[1])] = [i[2], i[3]]
 
+    n = 0
+    for i in ins:
+        if str(n) not in games:
+            games[str(n)] = {}
+            games[str(n)]["date"] = str(i[5])
+        if str(i[1]) == '10':
+            games[str(n)][str(i[1])] = [i[2], i[3], i[4]]
+            n = n + 1
+        else:
+            games[str(n)][str(i[1])] = [i[2], i[3]]
+
+    print(games)
     return dumps(games)
 
 
