@@ -198,6 +198,150 @@ var lastScoreChart = new Chart(ctx, {
 	
 });
 </script>
+<script>
+//this chart should show the average scores over the last five games entered
+var ctx = document.getElementById('lineChart').getContext('2d');
+Chart.defaults.global.defaultFontColor = 'black';
+var lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Game 1', 'Game 2', 'Game 3', 'Game 4',
+        'Game 5'],
+		fontColor: '#000'	,	// lables for all of the x asix 
+        datasets: [{
+            data: [156,//frame1 average
+                   254,//frame2 average
+                   300,//frame3 average
+                   200,//frame4 average
+                   241,//frame5 average
+            ],
+			backgroundColor: ['rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'],
+			borderColor: [
+                'rgba(0, 0, 0, .7)'
+            ],
+            fill: false,
+			lineTension: 0,
+			pointRadius: 6
+        }]
+    },
+    options: {
+		responsive: false,
+
+        scales: {
+			
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+				scaleLabel:{
+					display: true,
+					labelString: 'Total Score',
+					fontColor: '#000'
+				},
+            }],
+			xAxes:[{
+				scaleLabel:{
+					display: true,
+					labelString: 'Games',
+					fontColor: '#000'
+			},
+        }],
+        },
+        title: {
+            display: true,
+            text: 'Last 5 Game Average',
+			fontSize: 24,
+			fontColor: '#000'
+        },
+		legend:{
+		display: false
+		},
 		
+		
+		
+    }
+
+});
+</script>
+
+<script>// donut graph to show games between 250-300,150-200,100-150,100 lower
+var ctx = document.getElementById('donutChart').getContext('2d');
+Chart.defaults.global.defaultFontColor = 'black';
+var donutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['250-300', '150-200', '100-150', '100 or lower'],// lables for all of the x asix 
+			
+        datasets: [{
+            data: [9,//250-300
+                   15,//150-200
+                   7,//100-150
+                   5,//100 or lower
+                  
+            ],
+			backgroundColor: ['rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'],
+			
+            
+		
+		
+        }]
+    },
+    options: {
+		responsive: false,
+
+        scales: {
+			
+            yAxes: [{
+				display: false,
+                ticks: {
+                   // beginAtZero: true
+                },
+				scaleLabel:{
+					display: false,
+					
+				},
+				gridLines:{
+					display: false
+				},
+            }],
+			xAxes:[{
+				display:false,
+				scaleLabel:{
+					display: false,
+					
+					
+			},
+				gridLines:{
+					display: false
+				},
+			
+        }],
+        },
+        title: {
+            display: true,
+            text: 'Total Score Grouping',
+			fontSize: 24,
+			fontColor: '#000'
+        },
+		legend:{
+			
+			display: true,
+			text:'300-250'
+		},
+		
+		
+		
+    }
+
+});
+</script>		
 	</body>
 </html>
