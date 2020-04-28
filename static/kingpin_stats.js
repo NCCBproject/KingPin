@@ -31,8 +31,8 @@
 	}
 	
 	function lalaland(stats){
-		console.log(stats.0);
-		console.log(stats.0.0);
+		console.log(stats);
+		//console.log(stats.0.0);
 	
 	}
 	
