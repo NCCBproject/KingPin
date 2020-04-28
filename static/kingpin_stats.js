@@ -25,9 +25,15 @@
 		fetch(URL)
 			.then(checkStatus)
 			.then(JSON.parse)
-			.then(initialize_table)//this will send the data to "initialize_table" function if there are no errors 
+			.then(lalaland)//this will send the data to "initialize_table" function if there are no errors 
 			.catch(console.log);
 		
+	}
+	
+	function lalaland(stats){
+		console.log(stats.0);
+		console.log(stats.0.0);
+	
 	}
 	
 	function initialize_table(stats){//function to create and fill table with data	(remember to put have parameter variable)
