@@ -11,7 +11,7 @@ create table if not exists shadow(
        u_username varchar(64) primary key,
        has char(128),
        constraint shadow_u_username_fk foreign key (u_username) references users(u_username)
-};
+);
 
 create table if not exists game(
 	u_username varchar(64),
