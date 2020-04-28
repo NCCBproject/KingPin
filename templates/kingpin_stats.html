@@ -28,8 +28,176 @@
 			<input type = "search" id = "search_box" placeholder="Search for a name"><!--input who you want to search for-->
 			<button type = "button" id = "search_btn">Search</button><!--button to search for player-->
 		</div>
-		
-		<!-- create table here with JS to show stats -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+		<canvas id="frameAvgChart" width="800" height="300"></canvas>
+		<canvas id="lastScoreChart" width="600" height="300"></canvas>
+<script>
+//this chart should show the average scores over the last five games entered
+var ctx = document.getElementById('frameAvgChart').getContext('2d');
+Chart.defaults.global.defaultFontColor = 'black';
+var frameAvgChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['1st Frame', '2nd Frame', '3rd Frame', '4th Frame',
+		'5th Frame', '6th Frame', '7th Frame', '8th Frame', '9th Frame', '10th Frame'], // lables for all of the x asix 
+        datasets: [{
+            label: '# of Pins',
+			barThickness: 50,
+            data: [6,//frame1 average
+				   8,//frame2 average
+				   7,//frame3 average
+				   8,//frame4 average
+				   10,//frame5 average
+				   8,//frame6 average
+				   7,//frame7 average
+				   8,//frame8 average
+				   7,//frame9 average
+				   8,//frame10 average
+			],
+            backgroundColor: [
+                
+            ],
+            borderColor: [
+                'rgba(0, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+				'rgba(0, 0, 0, 1)',
+				'rgba(255, 0, 0, 1)',
+				'rgba(0, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+				'rgba(0, 0, 0, 1)',
+				'rgba(255, 0, 0, 1)',
+				'rgba(0, 0, 0, 1)',
+				'rgba(255, 0, 0, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+		responsive: false,
+        scales: {
+            yAxes: [{
+            	ticks: {
+                	beginAtZero: true
+            	},
+   			 scaleLabel:{
+   				 display: true,
+   				 labelString: 'Score',
+				 fontSize:16
+   			 },
+        	}],
+
+			xAxes: [{
+            	ticks: {
+                	beginAtZero: false
+            	},
+   			 scaleLabel:{
+   				 display: true,
+   				 labelString: 'Frame',
+				 fontSize:16
+   			 },
+        	}]
+			
+        },
+		title: {
+            display: true,
+            text: 'Frame Averages',
+			fontSize:24
+        },
+		legend: {
+            display: false,
+            position: 'left',
+			align: 'center'
+			
+			
+        }
+    }
+	
+});
+</script>
+
+<script>
+//this chart should show the average scores over the last five games entered
+var ctx = document.getElementById('lastScoreChart').getContext('2d');
+Chart.defaults.global.defaultFontColor = 'black';
+var lastScoreChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['1st Frame', '2nd Frame', '3rd Frame', '4th Frame',
+		'5th Frame', '6th Frame', '7th Frame', '8th Frame', '9th Frame', '10th Frame'], // lables for all of the x asix 
+        datasets: [{
+            label: '# of Pins',
+			barThickness: 10,
+            data: [1,//frame1 average
+				   2,//frame2 average
+				   5,//frame3 average
+				   4,//frame4 average
+				   4,//frame5 average
+				   8,//frame6 average
+				   7,//frame7 average
+				   8,//frame8 average
+				   10,//frame9 average
+				   8,//frame10 average
+			],
+            backgroundColor: [
+                
+            ],
+            borderColor: [
+                'rgba(0, 0, 255, 1)',
+                'rgba(255, 0, 0, 1)',
+				'rgba(0, 0, 255, 1)',
+				'rgba(255, 0, 0, 1)',
+				'rgba(0, 0, 255, 1)',
+                'rgba(255, 0, 0, 1)',
+				'rgba(0, 0, 255, 1)',
+				'rgba(255, 0, 0, 1)',
+				'rgba(0, 0, 255, 1)',
+				'rgba(255, 0, 0, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+		responsive: false,
+        scales: {
+            yAxes: [{
+            	ticks: {
+                	beginAtZero: true
+            	},
+   			 scaleLabel:{
+   				 display: true,
+   				 labelString: 'Frame',
+				 fontSize:16
+   			 },
+        	}],
+
+			xAxes: [{
+            	ticks: {
+                	beginAtZero: true
+            	},
+   			 scaleLabel:{
+   				 display: true,
+   				 labelString: 'Score',
+				 fontSize:16
+   			 },
+        	}]
+			
+        },
+		title: {
+            display: true,
+            text: 'Most Recent Game',
+			fontSize:24
+        },
+		legend: {
+            display: false,
+            position: 'left',
+			align: 'center'
+			
+			
+        }
+    }
+	
+});
+</script>
 		
 	</body>
 </html>
