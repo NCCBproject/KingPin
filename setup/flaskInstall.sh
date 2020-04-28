@@ -10,5 +10,5 @@ sudo pip3 install flask
 sudo pip3 install mysql-connector
 echo "Starting Python virtual environment"
 python3 -m venv venv
-echo "create a self-signed certificate with: openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365"
+echo "create a self-signed certificate with: openssl req -x509 -newkey rsa:4096 -keyout kingpin.key -out kingpin.cert -days 365"
 echo "To run flask, use 'sudo python3 __init__.py"
