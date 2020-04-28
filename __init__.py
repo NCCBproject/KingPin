@@ -167,7 +167,7 @@ def getStats():
     n = 20
     uname = request.cookies.get('username')
     print(uname)
-    cursor.execute('SELECT g_id, f_num, f_throw1, f_throw2, f_throw3, g_date from frame natural join game where g_id in (SELECT g_id FROM users NATURAL JOIN game where u_username = "{}");'.format(uname))
+    cursor.execute('SELECT g_id, f_num, f_throw1, f_throw2, f_throw3, g_date, score from frame natural join game where g_id in (SELECT g_id FROM users NATURAL JOIN game where u_username = "{}");'.format(uname))
     ins = cursor.fetchall()
 
     games = {}
@@ -177,6 +177,7 @@ def getStats():
         if str(n) not in games:
             games[str(n)] = {}
             games[str(n)]["date"] = str(i[5])
+            games[str(n)]["score"] = str(i[6])
         if str(i[1]) == '10':
             games[str(n)][str(i[1])] = [i[2], i[3], i[4]]
             n = n + 1
