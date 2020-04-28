@@ -31,6 +31,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 		<canvas id="frameAvgChart" width="800" height="300"></canvas>
 		<canvas id="lastScoreChart" width="600" height="300"></canvas>
+		<canvas id="donutChart" width="800" height="300"></canvas>
+		<canvas id="lineChart" width="600" height="300"></canvas>
 <script>
 //this chart should show the average scores over the last five games entered
 var ctx = document.getElementById('frameAvgChart').getContext('2d');
@@ -116,7 +118,7 @@ var frameAvgChart = new Chart(ctx, {
 </script>
 
 <script>
-//this chart should show the average scores over the last five games entered
+//this chart shows the frame by frame breakdown of the last game played
 var ctx = document.getElementById('lastScoreChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var lastScoreChart = new Chart(ctx, {
@@ -199,7 +201,7 @@ var lastScoreChart = new Chart(ctx, {
 });
 </script>
 <script>
-//this chart should show the average scores over the last five games entered
+//this chart shows the total scores over the last five games entered
 var ctx = document.getElementById('lineChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var lineChart = new Chart(ctx, {
@@ -209,11 +211,11 @@ var lineChart = new Chart(ctx, {
         'Game 5'],
 		fontColor: '#000'	,	// lables for all of the x asix 
         datasets: [{
-            data: [156,//frame1 average
-                   254,//frame2 average
-                   300,//frame3 average
-                   200,//frame4 average
-                   241,//frame5 average
+            data: [156,//game1 total
+                   254,
+                   300,
+                   200,
+                   241,
             ],
 			backgroundColor: ['rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
@@ -236,7 +238,7 @@ var lineChart = new Chart(ctx, {
 			
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: false
                 },
 				scaleLabel:{
 					display: true,
