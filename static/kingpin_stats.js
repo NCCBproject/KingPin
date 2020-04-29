@@ -122,16 +122,16 @@ var lastScoreChart = new Chart(ctx, {
         datasets: [{
             label: '# of Pins',
 			barThickness: 10,
-            data: [1,//frame1 average
-				   2,//frame2 average
-				   5,//frame3 average
-				   4,//frame4 average
-				   4,//frame5 average
-				   8,//frame6 average
-				   7,//frame7 average
-				   8,//frame8 average
-				   10,//frame9 average
-				   8,//frame10 average
+            data: [stats[3][1][0]+stats[3][1][1],//frame1 average
+				   stats[3][2][0]+stats[3][2][1],//frame2 average
+				   stats[3][3][0]+stats[3][3][1],//frame3 average
+				   stats[3][4][0]+stats[3][4][1],//frame4 average
+				   stats[3][5][0]+stats[3][5][1],//frame5 average
+				   stats[3][6][0]+stats[3][6][1],//frame6 average
+				   stats[3][7][0]+stats[3][7][1],//frame7 average
+				   stats[3][8][0]+stats[3][8][1],//frame8 average
+				   stats[3][9][0]+stats[3][9][1],//frame9 average
+				   stats[3][10][0]+stats[3][10][1],//frame10 average
 			],
             backgroundColor: [
                 
