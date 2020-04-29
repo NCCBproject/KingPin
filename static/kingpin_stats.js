@@ -369,9 +369,9 @@ var donutChart = new Chart(ctx, {
 		return 0;
 	if(String=='x'||String=='x')
 		return 10;
-	if(String=='1'||String=='2'||String=='3'||String=='4'||String=='5'||String=='6'||String=='7'||String=='8'||String=='9'||String=='0')
+	if(String=='None')
+		return 0;
 		return parseInt(String);
-		return 210;
 	}
 	
 	function initialize_table(stats){//function to create and fill table with data	(remember to put have parameter variable)
