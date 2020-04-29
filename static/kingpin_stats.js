@@ -35,7 +35,7 @@
 		x.width = "800px";
 		x.height = "300px";
 		cArea.append(x);
-		
+		var f1Avg= 0;
 		
 		var ctx = document.getElementById('frameAvgChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
@@ -47,7 +47,7 @@ var frameAvgChart = new Chart(ctx, {
         datasets: [{
            	 label: '# of Pins',
 			barThickness: 50,
-           	 data: [6,//frame1 average
+           	 data: [	   6,//frame1 average
 				   8,//frame2 average
 				   7,//frame3 average
 				   8,//frame4 average
@@ -285,7 +285,7 @@ var lineChart = new Chart(ctx, {
 	}
 var a,b,c,d,f =0;
 for( let x = 1; x<=5; x++){
-	scoreToInteger[x]['score'];
+	scoreToInteger([x]['score']);
 	if((stats[x]['score']<=300) && (stats[x]['score']>=250)){
 		a+=1;
 	}else if((stats[x]['score']<=249) && (stats[x]['score']>=200)){
