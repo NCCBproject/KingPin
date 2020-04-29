@@ -55,3 +55,9 @@ table{
 	width:100%;
 	background-color: yellow;
 }
+#donutChart, #lineChart, #lastScoreChart, #frameAvgChart{
+
+	background-color:white;
+	width:65%
+
+}
