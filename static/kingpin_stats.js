@@ -285,7 +285,6 @@ var lineChart = new Chart(ctx, {
 	}
 var a,b,c,d,f =0;
 for( let x = 1; x<=3; x++){
-	scoreToInteger(stats[x]['score']);
 	if((scoreToInteger(stats[x]['score'])<=300) && (scoreToInteger(stats[x]['score'])>=250)){
 		a+=1;
 	}else if((scoreToInteger(stats[x]['score'])<=249) && (scoreToInteger(stats[x]['score'])>=200)){
