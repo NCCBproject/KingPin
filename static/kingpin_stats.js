@@ -279,6 +279,7 @@ for( let x = 1; x<=3; x++){
 		d+=1;
 	}else{
 		f+=1;
+	}
 }	
 		var ctx = document.getElementById('lineChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
