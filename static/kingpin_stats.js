@@ -371,8 +371,6 @@ var donutChart = new Chart(ctx, {
 		return 10;
 	if(String=="None")
 		return 0;
-	if(String==None)
-		return 0;
 		return parseInt(String);
 	}
 	
