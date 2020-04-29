@@ -25,7 +25,7 @@
 		fetch(URL)
 			.then(checkStatus)
 			.then(JSON.parse)
-			.then(initalize_table)//this will send the data to "initialize_table" function if there are no errors 
+			.then(initialize_table)//this will send the data to "initialize_table" function if there are no errors 
 			.catch(console.log);
 		
 	}
