@@ -64,7 +64,7 @@
 					table_part = "td";
 				
 					let col = document.createElement("td");
-					let txt = document.createTextNode(stats[i-1].j.Array.0 + " " + stats[i-1].j.Array.1);//this is the score for the frame
+					let txt = document.createTextNode(stats[i-1][j][0]+ " " + stats[i-1][j][1]);//this is the score for the frame
 			
 					col.appendChild(txt);//appends both col and row to the table
 					row.appendChild(col);
