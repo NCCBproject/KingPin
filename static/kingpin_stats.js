@@ -278,11 +278,11 @@ for( let x = 1; x<=3; x++){
 		f+=1;
 }
 }
-	function lineChart(stats){
-		var ctx = document.getElementById('lineChart').getContext('2d');
-Chart.defaults.global.defaultFontColor = 'black';
-var donutChart = new Chart(ctx, {
-    type: 'doughnut',
+function lineChart(stats){
+	var ctx = document.getElementById('lineChart').getContext('2d');
+	Chart.defaults.global.defaultFontColor = 'black';
+	var donutChart = new Chart(ctx, {
+	type: 'doughnut',
     data: {
         labels: ['250-300','200-249' , '150-199', '100-149', '100 or lower'],// lables for all of the x asix 
 			
