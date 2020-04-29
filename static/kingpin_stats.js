@@ -215,7 +215,7 @@ var lastScoreChart = new Chart(ctx, {
 		x.height = "300px";
 		cArea.append(x);
 		
-		var ctx = document.getElementById('lineChart').getContext('2d');
+		var ctx = document.getElementById('donutChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var lineChart = new Chart(ctx, {
     type: 'line',
@@ -303,7 +303,7 @@ for( let x = 1; x<=3; x++){
 		x.width = "800px";
 		x.height = "300px";
 		cArea.append(x);
-		var ctx = document.getElementById('donutChart').getContext('2d');
+		var ctx = document.getElementById('lineChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var donutChart = new Chart(ctx, {
     type: 'doughnut',
