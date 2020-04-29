@@ -367,7 +367,7 @@ var donutChart = new Chart(ctx, {
 		return 0;
 	if(String=='/')
 		return 0;
-	if(String=='x'||String=='x')
+	if(String=='x'||String=='X')
 		return 10;
 	if(String=="None")
 		return 0;
