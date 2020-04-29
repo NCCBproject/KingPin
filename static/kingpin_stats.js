@@ -25,7 +25,7 @@
 		fetch(URL)
 			.then(checkStatus)
 			.then(JSON.parse)
-			.then(initalize_table)//this will send the data to "initialize_table" function if there are no errors 
+			.then(initialize_table)//this will send the data to "initialize_table" function if there are no errors 
 			.catch(console.log);
 		
 	}
@@ -362,7 +362,7 @@ var donutChart = new Chart(ctx, {
 				let table_part;//I'm pretty sure there is a better way to do this but idc right now since its midnight
 				if(i === 1){//first row will be bold
 					let col = document.createElement("th");//the first row will show the frame
-					let txt = document.createTextNode(j+1);
+					let txt = document.createTextNode(j);
 					
 					col.appendChild(txt);//appends both col and row to the table
 					row.appendChild(col);
