@@ -262,19 +262,35 @@ var lineChart = new Chart(ctx, {
 
 });
 	}
+var a,b,c,d,f =0;
+for( let x = 1; x< =5; x++){
+	scoreToInteger[x]['score'];
+	if((stats[x]['score'] <=300) && (stats[x]['score'] >=250)){
+		a+=1;
+	}else if((stats[x]['score'] <=249) && (stats[x]['score'] >=200)){
+		b+=1;
+	}else if((stats[x]['score'] <=199) && (stats[x]['score'] >=150)){
+		c+=1;
+	}else if((stats[x]['score'] <=149) && (stats[x]['score'] >=100)){
+		d+=1;
+	}else{
+		f+=1;
+}
+}
 	function lineChart(stats){
 		var ctx = document.getElementById('donutChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var donutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['250-300', '150-200', '100-150', '100 or lower'],// lables for all of the x asix 
+        labels: ['250-300','200-249' , '150-199', '100-149', '100 or lower'],// lables for all of the x asix 
 			
         datasets: [{
-            data: [9,//250-300
-                   15,//150-200
-                   7,//100-150
-                   5,//100 or lower
+            data: [a,//250-300
+                   b,//200-249
+                   c,//150-199
+                   d,//100-149
+		   f//100 or lower
                   
             ],
 			backgroundColor: ['rgba(255, 99, 132, 1)',
