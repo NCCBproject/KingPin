@@ -284,15 +284,15 @@ var lineChart = new Chart(ctx, {
 });
 	}
 var a,b,c,d,f =0;
-for( let x = 1; x<=5; x++){
+for( let x = 1; x<=3; x++){
 	scoreToInteger([x]['score']);
-	if((stats[x]['score']<=300) && (stats[x]['score']>=250)){
+	if((scoreToInteger(stats[x]['score'])<=300) && (scoreToInteger(stats[x]['score'])>=250)){
 		a+=1;
-	}else if((stats[x]['score']<=249) && (stats[x]['score']>=200)){
+	}else if((scoreToInteger(stats[x]['score'])<=249) && (scoreToInteger(stats[x]['score'])>=200)){
 		b+=1;
-	}else if((stats[x]['score']<=199) && (stats[x]['score']>=150)){
+	}else if((scoreToInteger(stats[x]['score'])<=199) && (scoreToInteger(stats[x]['score'])>=150)){
 		c+=1;
-	}else if((stats[x]['score']<=149) && (stats[x]['score']>=100)){
+	}else if((scoreToInteger(stats[x]['score'])<=149) && (scoreToInteger(stats[x]['score'])>=100)){
 		d+=1;
 	}else{
 		f+=1;
