@@ -1,12 +1,12 @@
 (function(){
 	"use strict";
 	window.addEventListener("load", init);
-	let btn;
+	let btn, cArea;
 	var content = {username:''};
 	
 	
 	function init(){
-
+			cArea = document.getElementById("canvasArea");
 			btn = document.getElementById("search_btn").addEventListener("click", function(){//when the button is clicked this stuff will happen
 			
 				let search_tag = document.getElementById("search_box").value;//gets value that is in the search bar
