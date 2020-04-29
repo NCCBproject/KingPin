@@ -37,7 +37,7 @@
 	}
 	
 	function initialize_table(stats){//function to create and fill table with data	(remember to put have parameter variable)
-		let gameNum = Object.keys(stats).length; //number of games 
+		let gameNum = stats[0]; //number of games 
 		let table = document.createElement("table");//creates table and adds it to html body
 		table.setAttribute("id", "data_table");
 		document.body.appendChild(table);
@@ -49,11 +49,11 @@
 			 sessionStorage.setItem("fifthGame", stats[5]);
  			 }
 		
-		for(let i = 0; i < gameNum; i++){//this will change. First row in table will need to get title of each column from php data. 
+		for(let i = 1; i < gameNum; i++){//this will change. First row in table will need to get title of each column from php data. 
 			let row = document.createElement("tr");// creates the rows of the table
 			for(let j = 1; j <= 10; j++){// will put data onto table cells 
 				let table_part;//I'm pretty sure there is a better way to do this but idc right now since its midnight
-				if(i === 0){//first row will be bold
+				if(i === 1){//first row will be bold
 					let col = document.createElement("th");//the first row will show the frame
 					let txt = document.createTextNode(j+1);
 					
