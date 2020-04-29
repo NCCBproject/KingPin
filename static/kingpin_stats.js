@@ -42,16 +42,66 @@ var frameAvgChart = new Chart(ctx, {
         datasets: [{
            	 label: '# of Pins',
 			barThickness: 50,
-           	 data: [	   6,//frame1 average
-				   8,//frame2 average
-				   7,//frame3 average
-				   8,//frame4 average
-				   10,//frame5 average
-				   8,//frame6 average
-				   7,//frame7 average
-				   8,//frame8 average
-				   7,//frame9 average
-				   8,//frame10 average
+           	 data: [	   (scoreToInteger(stats[1][1][0])+scoreToInteger(stats[1][1][1])+
+				   scoreToInteger(stats[2][1][0])+scoreToInteger(stats[2][1][1])+
+				   scoreToInteger(stats[3][1][0])+scoreToInteger(stats[3][1][1])+
+				   scoreToInteger(stats[4][1][0])+scoreToInteger(stats[4][1][1])+
+				   scoreToInteger(stats[5][1][0])+scoreToInteger(stats[5][1][1]))/5,
+		
+				   (scoreToInteger(stats[1][2][0])+scoreToInteger(stats[1][2][1])+
+				   scoreToInteger(stats[2][2][0])+scoreToInteger(stats[2][2][1])+
+				   scoreToInteger(stats[3][2][0])+scoreToInteger(stats[3][2][1])+
+				   scoreToInteger(stats[4][2][0])+scoreToInteger(stats[4][2][1])+
+				   scoreToInteger(stats[5][2][0])+scoreToInteger(stats[5][2][1]))/5,
+		
+				   (scoreToInteger(stats[1][3][0])+scoreToInteger(stats[1][3][1])+
+				   scoreToInteger(stats[2][3][0])+scoreToInteger(stats[2][3][1])+
+				   scoreToInteger(stats[3][3][0])+scoreToInteger(stats[3][3][1])+
+				   scoreToInteger(stats[4][3][0])+scoreToInteger(stats[4][3][1])+
+				   scoreToInteger(stats[5][3][0])+scoreToInteger(stats[5][3][1]))/5,
+		//frame3 average
+				   (scoreToInteger(stats[1][4][0])+scoreToInteger(stats[1][4][1])+
+				   scoreToInteger(stats[2][4][0])+scoreToInteger(stats[2][4][1])+
+				   scoreToInteger(stats[3][4][0])+scoreToInteger(stats[3][4][1])+
+				   scoreToInteger(stats[4][4][0])+scoreToInteger(stats[4][4][1])+
+				   scoreToInteger(stats[5][4][0])+scoreToInteger(stats[5][4][1]))/5,
+		//frame4 average
+				   (scoreToInteger(stats[1][5][0])+scoreToInteger(stats[1][5][1])+
+				   scoreToInteger(stats[2][5][0])+scoreToInteger(stats[2][5][1])+
+				   scoreToInteger(stats[3][5][0])+scoreToInteger(stats[3][5][1])+
+				   scoreToInteger(stats[4][5][0])+scoreToInteger(stats[4][5][1])+
+				   scoreToInteger(stats[5][5][0])+scoreToInteger(stats[5][5][1]))/5,
+		//frame5 average
+				   (scoreToInteger(stats[1][6][0])+scoreToInteger(stats[1][6][1])+
+				   scoreToInteger(stats[2][6][0])+scoreToInteger(stats[2][6][1])+
+				   scoreToInteger(stats[3][6][0])+scoreToInteger(stats[3][6][1])+
+				   scoreToInteger(stats[4][6][0])+scoreToInteger(stats[4][6][1])+
+				   scoreToInteger(stats[5][6][0])+scoreToInteger(stats[5][6][1]))/5,
+		//frame6 average
+				   (scoreToInteger(stats[1][7][0])+scoreToInteger(stats[1][7][1])+
+				   scoreToInteger(stats[2][7][0])+scoreToInteger(stats[2][7][1])+
+				   scoreToInteger(stats[3][7][0])+scoreToInteger(stats[3][7][1])+
+				   scoreToInteger(stats[4][7][0])+scoreToInteger(stats[4][7][1])+
+				   scoreToInteger(stats[5][7][0])+scoreToInteger(stats[5][7][1]))/5,
+		//frame7 average
+				   (scoreToInteger(stats[1][8][0])+scoreToInteger(stats[1][8][1])+
+				   scoreToInteger(stats[2][8][0])+scoreToInteger(stats[2][8][1])+
+				   scoreToInteger(stats[3][8][0])+scoreToInteger(stats[3][8][1])+
+				   scoreToInteger(stats[4][8][0])+scoreToInteger(stats[4][8][1])+
+				   scoreToInteger(stats[5][8][0])+scoreToInteger(stats[5][8][1]))/5,
+		//frame8 average
+				   (scoreToInteger(stats[1][9][0])+scoreToInteger(stats[1][9][1])+
+				   scoreToInteger(stats[2][9][0])+scoreToInteger(stats[2][9][1])+
+				   scoreToInteger(stats[3][9][0])+scoreToInteger(stats[3][9][1])+
+				   scoreToInteger(stats[4][9][0])+scoreToInteger(stats[4][9][1])+
+				   scoreToInteger(stats[5][9][0])+scoreToInteger(stats[5][9][1]))/5,
+		//frame9 average
+				   (scoreToInteger(stats[1][10][0])+scoreToInteger(stats[1][10][1])+
+				   scoreToInteger(stats[2][10][0])+scoreToInteger(stats[2][10][1])+
+				   scoreToInteger(stats[3][10][0])+scoreToInteger(stats[3][10][1])+
+				   scoreToInteger(stats[4][10][0])+scoreToInteger(stats[4][10][1])+
+				   scoreToInteger(stats[5][10][0])+scoreToInteger(stats[5][10][1]))/5,
+		//frame10 average
 			],
             backgroundColor: [
                 
