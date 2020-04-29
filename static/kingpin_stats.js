@@ -265,7 +265,7 @@ var lineChart = new Chart(ctx, {
 });
 	}
 
-}
+
 	function donutChart(stats){
 	var a,b,c,d,f =0;
 for( let x = 1; x<=3; x++){
