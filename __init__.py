@@ -44,16 +44,18 @@ def entry():
     """Returns the html and acoompanying files for the entry page"""
     return render_template('kingpin_entry.html')
 
-@app.route('/static/kingpin_entry.php', methods=['POST'])
+@app.route('/kingpin_entry.php', methods=['POST'])
 def entryPhp():
     """Handles POST requests from the entry page by validating the data and entering them into the datbase."""
     #The post requests arrives as a string, this separates it and saves it into a dictionary named "frames"
     ins = str(request.get_data()).split('=')
+    print(ins)
     frames = {}
     for i in range(1,len(ins)-1, 2):
         if((i+1)/2 >= 10):
             #The 10th frame is different from the rest
-            frames["10"] = [ins[i][:-8], ins[i+1][:-8], ins[i+2][:-1]]
+            frames["10"] = [ins[i][:-8], ins[i+1][:-8], ins[i+2][:-11]]
+            score = ins[i+3][:-1]
             break
         else:
             frames[str(int((i+1)/2))] = [ins[i][:-8], ins[i+1][:-8]]
@@ -80,13 +82,12 @@ def entryPhp():
     uname = request.cookies.get('username')
     cursor.execute('select count(*) from game;')
     g_id = int(cursor.fetchall()[0][0]) + 1
-    cursor.execute('insert into game values("{}", {}, now(), NULL);'.format(uname, g_id))
+    cursor.execute('insert into game values("{}", {}, now(), {});'.format(uname, g_id, score))
     for i in frames:
         if i == '10':
             cursor.execute('insert into frame values({}, {}, "{}", "{}", "{}", NULL);'.format(g_id, int(i), frames[i][0], frames[i][1], frames[i][2]))
         else:
             cursor.execute('insert into frame values({}, {}, "{}", "{}", NULL, NULL);'.format(g_id, int(i), frames[i][0], frames[i][1]))
-
     #redirects user to stats page
     return redirect(url_for('stats'))
         
@@ -169,10 +170,12 @@ def getStats():
     print(uname)
     cursor.execute('SELECT g_id, f_num, f_throw1, f_throw2, f_throw3, g_date, score from frame natural join game where g_id in (SELECT g_id FROM users NATURAL JOIN game where u_username = "{}");'.format(uname))
     ins = cursor.fetchall()
-
+    print(ins)
     games = {}
 
-    n = 0
+    games[0] = int(len(ins)/10)
+    
+    n = 1 #the key in the games dictionary
     for i in ins:
         if str(n) not in games:
             games[str(n)] = {}
