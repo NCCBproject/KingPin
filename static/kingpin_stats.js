@@ -269,13 +269,13 @@ var lineChart = new Chart(ctx, {
 	function donutChart(stats){
 	var a,b,c,d,f =0;
 for( let x = 1; x<=3; x++){
-	if((scoreToInteger(stats[x]['score'])<=300) && (scoreToInteger(stats[x]['score'])>=250)){
+	if((scoreToInteger(stats[x][0])<=300) && (scoreToInteger(stats[x][0])>=250)){
 		a+=1;
-	}else if((scoreToInteger(stats[x]['score'])<=249) && (scoreToInteger(stats[x]['score'])>=200)){
+	}else if((scoreToInteger(stats[x][0])<=249) && (scoreToInteger(stats[x][0])>=200)){
 		b+=1;
-	}else if((scoreToInteger(stats[x]['score'])<=199) && (scoreToInteger(stats[x]['score'])>=150)){
+	}else if((scoreToInteger(stats[x][0])<=199) && (scoreToInteger(stats[x][0])>=150)){
 		c+=1;
-	}else if((scoreToInteger(stats[x]['score'])<=149) && (scoreToInteger(stats[x]['score'])>=100)){
+	}else if((scoreToInteger(stats[x][0])<=149) && (scoreToInteger(stats[x][0])>=100)){
 		d+=1;
 	}else{
 		f+=1;
