@@ -263,7 +263,7 @@ var lineChart = new Chart(ctx, {
 });
 	}
 var a,b,c,d,f =0;
-for( let x = 1; x< =5; x++){
+for( let x = 1; x<=5; x++){
 	scoreToInteger[x]['score'];
 	if((stats[x]['score']<=300) && (stats[x]['score']>=250)){
 		a+=1;
