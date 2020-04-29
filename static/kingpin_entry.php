@@ -22,5 +22,6 @@ Frame 9: <?php echo $_POST["frame91"]; ?><?php echo $_POST["frame92"]; ?><br>
   
 Frame 10: <?php echo $_POST["frame01"]; ?><?php echo $_POST["frame02"]; <?php echo $_POST["frame03"];?><br>
   // frame 10 has 3 because if the user gets two stikes the frame will need 3 inputs
+Final Score: <?php echo $_POST["finalScore"]; ?><br>
 </body>
 </html> 
