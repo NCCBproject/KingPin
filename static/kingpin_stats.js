@@ -32,6 +32,8 @@
 	function frameAvgChart(stats){
 		var x = document.createElement("CANVAS");
 		x.id = "frameAvgChart";
+		x.width = "800px";
+		x.height = "300px";
 		var ctx = document.getElementById('frameAvgChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var frameAvgChart = new Chart(ctx, {
@@ -116,6 +118,8 @@ var frameAvgChart = new Chart(ctx, {
 	function lastScoreChart(stats){
 		var x = document.createElement("CANVAS");
 		x.id = "lastScoreChart";
+		x.width = "600px";
+		x.height = "300px";
 		var ctx = document.getElementById('lastScoreChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var lastScoreChart = new Chart(ctx, {
@@ -200,6 +204,8 @@ var lastScoreChart = new Chart(ctx, {
 	function donutChart(stats){
 		var x = document.createElement("CANVAS");
 		x.id = "lineChart";
+		x.width = "800px";
+		x.height = "300px";
 		var ctx = document.getElementById('lineChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var lineChart = new Chart(ctx, {
@@ -271,6 +277,8 @@ var lineChart = new Chart(ctx, {
 	function lineChart(stats){
 		var x = document.createElement("CANVAS");
 		x.id = "donutChart";
+		x.width = "600px";
+		x.height = "300px";
 		var ctx = document.getElementById('donutChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var donutChart = new Chart(ctx, {
