@@ -255,11 +255,12 @@ var lineChart = new Chart(ctx, {
         'Game 5'],
 		fontColor: '#000'	,	// lables for all of the x asix 
         datasets: [{
-            data: [156,//game1 total
-                   254,
-                   300,
-                   200,
-                   241,
+            data: [scoreToInteger(stats[1][0]),//game1 total
+                   scoreToInteger(stats[2][0]),//game2 total
+                   scoreToInteger(stats[3][0]),//game3 total
+                   scoreToInteger(stats[4][0]),//game4 total
+                   scoreToInteger(stats[5][0]),//game5 total
+                  
             ],
 			backgroundColor: ['rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
