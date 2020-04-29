@@ -163,31 +163,41 @@ def stats():
 
 @app.route('/kingpin_stats.php', methods=['POST', 'GET'])
 def getStats():
-    """Currently in for testing, will have function soon"""
-    print("kingpin stats post:".format(request.get_data()))
-    n = 20
+    """Takes recent game data from the dictionary and sends it in json form to the frontend"""
+
+    #the number of games to send
+    n = 5
+
+    #reads the cookie for username
     uname = request.cookies.get('username')
-    print(uname)
+
+    #brings the requested data from the database
     cursor.execute('SELECT g_id, f_num, f_throw1, f_throw2, f_throw3, g_date, score from frame natural join game where g_id in (SELECT g_id FROM users NATURAL JOIN game where u_username = "{}");'.format(uname))
     ins = cursor.fetchall()
-    print(ins)
+
+    #creates a Python dictionary
     games = {}
 
+    #sets the number of games as the first entry
     games[0] = int(len(ins)/10)
     
     n = 1 #the key in the games dictionary
+
+    #inserts each frame into the dictionary
     for i in ins:
+        #adds the game to the dictionary by ID
         if str(n) not in games:
             games[str(n)] = {}
             games[str(n)]["date"] = str(i[5])
-            games[str(n)]["score"] = str(i[6])
+            games[str(n)][0] = str(i[6])
+        #frame 10 is different
         if str(i[1]) == '10':
             games[str(n)][str(i[1])] = [i[2], i[3], i[4]]
             n = n + 1
         else:
             games[str(n)][str(i[1])] = [i[2], i[3]]
 
-    print(games)
+    #returns a string of the python dictionary, which can be interpreted as JSON data
     return dumps(games)
 
 
