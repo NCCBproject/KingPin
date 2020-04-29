@@ -195,7 +195,7 @@ var lastScoreChart = new Chart(ctx, {
 	
 });
 	}
-	function donutChart(stats){		
+	function lineChart(stats){		
 		var ctx = document.getElementById('donutChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var lineChart = new Chart(ctx, {
@@ -264,7 +264,10 @@ var lineChart = new Chart(ctx, {
 
 });
 	}
-var a,b,c,d,f =0;
+
+}
+	function donutChart(stats){
+	var a,b,c,d,f =0;
 for( let x = 1; x<=3; x++){
 	if((scoreToInteger(stats[x]['score'])<=300) && (scoreToInteger(stats[x]['score'])>=250)){
 		a+=1;
@@ -276,13 +279,11 @@ for( let x = 1; x<=3; x++){
 		d+=1;
 	}else{
 		f+=1;
-}
-}
-function lineChart(stats){
-	var ctx = document.getElementById('lineChart').getContext('2d');
-	Chart.defaults.global.defaultFontColor = 'black';
-	var donutChart = new Chart(ctx, {
-	type: 'doughnut',
+}	
+		var ctx = document.getElementById('lineChart').getContext('2d');
+Chart.defaults.global.defaultFontColor = 'black';
+var donutChart = new Chart(ctx, {
+    type: 'doughnut',
     data: {
         labels: ['250-300','200-249' , '150-199', '100-149', '100 or lower'],// lables for all of the x asix 
 			
