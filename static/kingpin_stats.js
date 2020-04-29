@@ -30,10 +30,6 @@
 		
 	}
 	function frameAvgChart(stats){
-		var x = document.createElement("CANVAS");
-		x.id = "frameAvgChart";
-		x.width = "800px";
-		x.height = "300px";
 		var ctx = document.getElementById('frameAvgChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var frameAvgChart = new Chart(ctx, {
@@ -116,10 +112,6 @@ var frameAvgChart = new Chart(ctx, {
 });
 	}
 	function lastScoreChart(stats){
-		var x = document.createElement("CANVAS");
-		x.id = "lastScoreChart";
-		x.width = "600px";
-		x.height = "300px";
 		var ctx = document.getElementById('lastScoreChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var lastScoreChart = new Chart(ctx, {
@@ -130,16 +122,16 @@ var lastScoreChart = new Chart(ctx, {
         datasets: [{
             label: '# of Pins',
 			barThickness: 10,
-            data: [stats[3][1][0]+stats[3][1][1],//frame1 average
-				   stats[3][2][0]+stats[3][2][1],//frame2 average
-				   stats[3][3][0]+stats[3][3][1],//frame3 average
-				   stats[3][4][0]+stats[3][4][1],//frame4 average
-				   stats[3][5][0]+stats[3][5][1],//frame5 average
-				   stats[3][6][0]+stats[3][6][1],//frame6 average
-				   stats[3][7][0]+stats[3][7][1],//frame7 average
-				   stats[3][8][0]+stats[3][8][1],//frame8 average
-				   stats[3][9][0]+stats[3][9][1],//frame9 average
-				   stats[3][10][0]+stats[3][10][1],//frame10 average
+            data: [		   scoreToInteger(stats[3][1][0])+scoreToInteger(stats[3][1][1]),//frame1 average
+				   scoreToInteger(stats[3][2][0])+scoreToInteger(stats[3][2][1]),//frame2 average
+				   scoreToInteger(stats[3][3][0])+scoreToInteger(stats[3][3][1]),//frame3 average
+				   scoreToInteger(stats[3][4][0])+scoreToInteger(stats[3][4][1]),//frame4 average
+				   scoreToInteger(stats[3][5][0])+scoreToInteger(stats[3][5][1]),//frame5 average
+				   scoreToInteger(stats[3][6][0])+scoreToInteger(stats[3][6][1]),//frame6 average
+				   scoreToInteger(stats[3][7][0])+scoreToInteger(stats[3][7][1]),//frame7 average
+				   scoreToInteger(stats[3][8][0])+scoreToInteger(stats[3][8][1]),//frame8 average
+				   scoreToInteger(stats[3][9][0])+scoreToInteger(stats[3][9][1]),//frame9 average
+				   scoreToInteger(stats[3][10][0])+scoreToInteger(stats[3][10][1]),//frame10 average
 			],
             backgroundColor: [
                 
@@ -202,10 +194,6 @@ var lastScoreChart = new Chart(ctx, {
 });
 	}
 	function donutChart(stats){
-		var x = document.createElement("CANVAS");
-		x.id = "lineChart";
-		x.width = "800px";
-		x.height = "300px";
 		var ctx = document.getElementById('lineChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var lineChart = new Chart(ctx, {
@@ -275,10 +263,6 @@ var lineChart = new Chart(ctx, {
 });
 	}
 	function lineChart(stats){
-		var x = document.createElement("CANVAS");
-		x.id = "donutChart";
-		x.width = "600px";
-		x.height = "300px";
 		var ctx = document.getElementById('donutChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
 var donutChart = new Chart(ctx, {
@@ -357,6 +341,18 @@ var donutChart = new Chart(ctx, {
 		console.log(stats);
 		//console.log(stats.0.0);
 	
+	}
+	
+	function scoreToInteger(String){
+	if(String=='f')
+		return 0;
+	if(String=='-')
+		return 0;
+	if(String=='/')
+		return 0;
+	if(String=='x'||String=='x')
+		return 10;
+		return parseInt(String);
 	}
 	
 	function initialize_table(stats){//function to create and fill table with data	(remember to put have parameter variable)
