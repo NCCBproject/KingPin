@@ -356,13 +356,13 @@ var donutChart = new Chart(ctx, {
 			 sessionStorage.setItem("fifthGame", stats[5]);
  			 }
 		
-		for(let i = 1; i <= gameNum; i++){//this will change. First row in table will need to get title of each column from php data. 
+		for(let i = 0; i <= gameNum; i++){//this will change. First row in table will need to get title of each column from php data. 
 			let row = document.createElement("tr");// creates the rows of the table
 			for(let j = 1; j <= 10; j++){// will put data onto table cells 
 				let table_part;//I'm pretty sure there is a better way to do this but idc right now since its midnight
-				if(i === 1){//first row will be bold
+				if(i === 0){//first row will be bold
 					let col = document.createElement("th");//the first row will show the frame
-					let txt = document.createTextNode(j+1);
+					let txt = document.createTextNode(j);
 					
 					col.appendChild(txt);//appends both col and row to the table
 					row.appendChild(col);
@@ -371,7 +371,7 @@ var donutChart = new Chart(ctx, {
 					table_part = "td";
 				
 					let col = document.createElement("td");
-					let txt = document.createTextNode(stats[i-1][j][0]+ " " + stats[i-1][j][1]);//this is the score for the frame
+					let txt = document.createTextNode(stats[i][j][0]+ " " + stats[i][j][1]);//this is the score for the frame
 			
 					col.appendChild(txt);//appends both col and row to the table
 					row.appendChild(col);
