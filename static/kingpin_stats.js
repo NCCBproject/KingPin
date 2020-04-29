@@ -51,7 +51,7 @@
 		
 		for(let i = 0; i < gameNum; i++){//this will change. First row in table will need to get title of each column from php data. 
 			let row = document.createElement("tr");// creates the rows of the table
-			for(let j = 0; j < 10; j++){// will put data onto table cells 
+			for(let j = 1; j < 10; j++){// will put data onto table cells 
 				let table_part;//I'm pretty sure there is a better way to do this but idc right now since its midnight
 				if(i === 0){//first row will be bold
 					let col = document.createElement("th");//the first row will show the frame
