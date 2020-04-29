@@ -267,7 +267,7 @@ var lineChart = new Chart(ctx, {
 
 
 	function donutChart(stats){
-		/*
+		
 	var a,b,c,d,f =0;
 for( let x = 1; x<=3; x++){
 	if((scoreToInteger(stats[x][0])<=300) && (scoreToInteger(stats[x][0])>=250)){
@@ -282,7 +282,7 @@ for( let x = 1; x<=3; x++){
 		f+=1;
 	}
 }	
-*/
+
 		console.log(stats[3][0]);
 		var ctx = document.getElementById('lineChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'black';
