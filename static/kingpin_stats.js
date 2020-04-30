@@ -301,7 +301,7 @@ var lineChart = new Chart(ctx, {
         },
         title: {
             display: true,
-            text: 'Last 5 Game Average',
+            text: 'Last 5 Game Score Totals',
 			fontSize: 24,
 			fontColor: '#000'
         },
