@@ -199,7 +199,6 @@ def getStats():
         else:
             games[str(n)][str(i[1])] = [i[2], i[3]]
 
-    print(games)
     #returns a string of the python dictionary, which can be interpreted as JSON data
     return dumps(games)
 
