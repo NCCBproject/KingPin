@@ -174,16 +174,16 @@ var lastScoreChart = new Chart(ctx, {
         datasets: [{
             label: '# of Pins',
 			barThickness: 10,
-            data: [		   scoreToInteger(stats[3][1][0])+scoreToInteger(stats[3][1][1]),//frame1 average
-				   scoreToInteger(stats[3][2][0])+scoreToInteger(stats[3][2][1]),//frame2 average
-				   scoreToInteger(stats[3][3][0])+scoreToInteger(stats[3][3][1]),//frame3 average
-				   scoreToInteger(stats[3][4][0])+scoreToInteger(stats[3][4][1]),//frame4 average
-				   scoreToInteger(stats[3][5][0])+scoreToInteger(stats[3][5][1]),//frame5 average
-				   scoreToInteger(stats[3][6][0])+scoreToInteger(stats[3][6][1]),//frame6 average
-				   scoreToInteger(stats[3][7][0])+scoreToInteger(stats[3][7][1]),//frame7 average
-				   scoreToInteger(stats[3][8][0])+scoreToInteger(stats[3][8][1]),//frame8 average
-				   scoreToInteger(stats[3][9][0])+scoreToInteger(stats[3][9][1]),//frame9 average
-				   scoreToInteger(stats[3][10][0])+scoreToInteger(stats[3][10][1]),//frame10 average
+            data: [		   scoreToInteger(stats[5][1][0])+scoreToInteger(stats[5][1][1]),//frame1 average
+				   scoreToInteger(stats[5][2][0])+scoreToInteger(stats[5][2][1]),//frame2 average
+				   scoreToInteger(stats[5][3][0])+scoreToInteger(stats[5][3][1]),//frame3 average
+				   scoreToInteger(stats[5][4][0])+scoreToInteger(stats[5][4][1]),//frame4 average
+				   scoreToInteger(stats[5][5][0])+scoreToInteger(stats[5][5][1]),//frame5 average
+				   scoreToInteger(stats[5][6][0])+scoreToInteger(stats[5][6][1]),//frame6 average
+				   scoreToInteger(stats[5][7][0])+scoreToInteger(stats[5][7][1]),//frame7 average
+				   scoreToInteger(stats[5][8][0])+scoreToInteger(stats[5][8][1]),//frame8 average
+				   scoreToInteger(stats[5][9][0])+scoreToInteger(stats[5][9][1]),//frame9 average
+				   scoreToInteger(stats[5][10][0])+scoreToInteger(stats[5][10][1]),//frame10 average
 			],
             backgroundColor: [
                 
@@ -301,7 +301,7 @@ var lineChart = new Chart(ctx, {
         },
         title: {
             display: true,
-            text: 'Last 5 Game Average',
+            text: 'Last 5 Game Score Totals',
 			fontSize: 24,
 			fontColor: '#000'
         },
@@ -320,7 +320,7 @@ var lineChart = new Chart(ctx, {
 	function donutChart(stats){
 		
 	var a,b,c,d,f =0;
-for( let x = 1; x<=3; x++){
+for( let x = 1; x<=5; x++){
 	if((scoreToInteger(stats[x][0])<=300) && (scoreToInteger(stats[x][0])>=250)){
 		a+=1;
 	}else if((scoreToInteger(stats[x][0])<=249) && (scoreToInteger(stats[x][0])>=200)){
