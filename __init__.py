@@ -172,8 +172,8 @@ def getStats():
     uname = request.cookies.get('username')
 
     #brings the requested data from the database
-    cursor.execute('SELECT g_id, f_num, f_throw1, f_throw2, f_throw3, g_date, score from frame natural join game where g_id in (SELECT g_id FROM users NATURAL JOIN game where u_username = "{}");'.format(uname))
-    ins = cursor.fetchall()
+    cursor.execute('select g_id, f_num, f_throw1, f_throw2, f_throw3, g_date, score from frame natural join game where u_username = "{}" order by g_id desc limit 50;'.format(uname))
+    ins = list(reversed(cursor.fetchall()))
 
     #creates a Python dictionary
     games = {}
@@ -197,6 +197,7 @@ def getStats():
         else:
             games[str(n)][str(i[1])] = [i[2], i[3]]
 
+    print(games)
     #returns a string of the python dictionary, which can be interpreted as JSON data
     return dumps(games)
 
