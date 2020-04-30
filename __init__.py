@@ -154,7 +154,9 @@ def insertAccount():
     cursor.execute('INSERT INTO shadow VALUES("{}", sha2("{}", 512));'.format(ins[0], ins[1]))
 
     #redirects to login page
-    return redirect(url_for('login'))
+    resp = make_response(redirect(url_for('stats')))
+    resp.set_cookie('username', ins[0], secure=True)
+    return resp
 
 @app.route('/kingpin_stats.html')
 def stats():
